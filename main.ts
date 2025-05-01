@@ -138,14 +138,11 @@ function Call_level () {
             111111111111111111111111111111111111ffffffffffffffffffffffffffffffffffffff111111111111111111111111111111111111111111111111111111111111111111111111111111111111ff
             111111111111111111111111111111111111fffffffffffffffffffffffffffffffffffffff111111111111111111111111111111111111111111111111111111111111111111111111111111111ffff
             `)
-        tiles.setCurrentTilemap(tilemap`level4`)
+        tiles.setCurrentTilemap(tilemap`level7`)
         mySprite.ay = 350
         controller.moveSprite(mySprite, 100, 0)
         scene.cameraFollowSprite(mySprite)
-        tiles.placeOnRandomTile(mySprite, sprites.dungeon.collectibleRedCrystal)
-    } else {
-        tiles.setCurrentTilemap(tilemap`level7`)
-        tiles.placeOnRandomTile(mySprite, sprites.dungeon.collectibleRedCrystal)
+        tiles.placeOnRandomTile(mySprite, assets.tile`myTile`)
     }
 }
 let Leve1_Number = 0
