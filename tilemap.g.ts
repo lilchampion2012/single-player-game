@@ -44,6 +44,12 @@ namespace myTiles {
     export const tile21 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     export const tile1 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile22 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile23 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile24 = image.ofBuffer(hex``);
 
     helpers._registerFactory("tilemap", function(name: string) {
         switch(helpers.stringTrim(name)) {
@@ -367,25 +373,6 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, [myTiles.transparency16], TileScale.Sixteen);
-            case "level14":
-            case "level11":return tiles.createTilemap(hex`1000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000050000000000000000000000000005050000050000020000000000050005000000000000050503000005050000000000000000000000050500000000000000000000000000000000000000000000000000000000000004010101010101010101010101010101`, img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . 2 . . . . . 
-. . . . . . . . 2 2 . . 2 . . . 
-. . . . . 2 . 2 . . . . . . 2 2 
-. . . 2 2 . . . . . . . . . . . 
-2 2 . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, [myTiles.transparency16,sprites.builtin.coral5,sprites.dungeon.collectibleRedCrystal,sprites.dungeon.collectibleBlueCrystal,sprites.builtin.coral3,sprites.builtin.oceanSand0], TileScale.Sixteen);
             case "level16":
             case "level15":return tiles.createTilemap(hex`1000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000030000000000000000000000000000000200000000000000000000000000020000000000000000000000000000000000000000000000020002000000000000000200000000000000000000000000000000040000020000000002020000000200000202000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001010101010101010101010101010101`, img`
 . . . . . . . . . . . . . . . . 
@@ -443,6 +430,25 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, [myTiles.transparency16], TileScale.Sixteen);
+            case "level14":
+            case "level11":return tiles.createTilemap(hex`1000100000000000000000000000000000000000000000000000000000000000000100050000000000000100000100000000010100000001000000000000000001000000000000000000000000000000000000000000000000010001000001000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000001000000000000000000000001000000000000000000000000000000000001010000000000000000000100000000000000000000000000040000000000000000000000000000010100000000000000000000000000000000000000000000000000000000000002020202020202020202020202020202`, img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, [myTiles.transparency16,sprites.builtin.oceanSand4,sprites.builtin.coral2,myTiles.tile24,sprites.dungeon.collectibleBlueCrystal,sprites.dungeon.collectibleRedCrystal], TileScale.Sixteen);
         }
         return null;
     })
@@ -492,6 +498,12 @@ namespace myTiles {
             case "tile21":return tile21;
             case "myTile":
             case "tile1":return tile1;
+            case "myTile20":
+            case "tile22":return tile22;
+            case "myTile21":
+            case "tile23":return tile23;
+            case "myTile22":
+            case "tile24":return tile24;
         }
         return null;
     })
