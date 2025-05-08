@@ -3,20 +3,20 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         mySprite.vy = -160
     }
 })
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile3`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
     Leve1_Number += 1
     Call_level()
 })
 function Call_level () {
     if (Leve1_Number == 1) {
-        tiles.setCurrentTilemap(tilemap`level2`)
-        tiles.placeOnRandomTile(mySprite, assets.tile`myTile`)
+        tiles.setCurrentTilemap(tilemap`level1`)
+        tiles.placeOnRandomTile(mySprite, assets.tile`myTile0`)
     } else if (Leve1_Number == 2) {
-        tiles.setCurrentTilemap(tilemap`level5`)
-        tiles.placeOnRandomTile(mySprite, assets.tile`myTile`)
+        tiles.setCurrentTilemap(tilemap`level2`)
+        tiles.placeOnRandomTile(mySprite, assets.tile`myTile0`)
     } else if (Leve1_Number == 3) {
-        tiles.setCurrentTilemap(tilemap`level6`)
-        tiles.placeOnRandomTile(mySprite, assets.tile`myTile`)
+        tiles.setCurrentTilemap(tilemap`level3`)
+        tiles.placeOnRandomTile(mySprite, assets.tile`myTile0`)
     } else if (false) {
         scene.setBackgroundImage(img`
             8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
@@ -140,11 +140,11 @@ function Call_level () {
             111111111111111111111111111111111111ffffffffffffffffffffffffffffffffffffff111111111111111111111111111111111111111111111111111111111111111111111111111111111111ff
             111111111111111111111111111111111111fffffffffffffffffffffffffffffffffffffff111111111111111111111111111111111111111111111111111111111111111111111111111111111ffff
             `)
-        tiles.setCurrentTilemap(tilemap`level7`)
+        tiles.setCurrentTilemap(tilemap`level4`)
+        tiles.placeOnRandomTile(mySprite, sprites.dungeon.collectibleRedCrystal)
         mySprite.ay = 350
         controller.moveSprite(mySprite, 100, 0)
         scene.cameraFollowSprite(mySprite)
-        tiles.placeOnRandomTile(mySprite, assets.tile`myTile`)
     } else {
         scene.setBackgroundImage(img`
             8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
@@ -268,11 +268,15 @@ function Call_level () {
             111111111111111111111111111111111111ffffffffffffffffffffffffffffffffffffff111111111111111111111111111111111111111111111111111111111111111111111111111111111111ff
             111111111111111111111111111111111111fffffffffffffffffffffffffffffffffffffff111111111111111111111111111111111111111111111111111111111111111111111111111111111ffff
             `)
-        tiles.setCurrentTilemap(tilemap`level7`)
+        tiles.setCurrentTilemap(tilemap`level4`)
+        tiles.placeOnRandomTile(mySprite, sprites.dungeon.collectibleRedCrystal)
+        Call_level()
     }
 }
 let Leve1_Number = 0
 let mySprite: Sprite = null
+let Ask_name = game.askForString(game.ask("What's your name"))
+game.showLongText("Hello, for this game you will need to collect the different objects and items throughout the different stages and levels. As you go through the game you will notice you sprite changing as it grows up. Good luck players!", DialogLayout.Center)
 scene.setBackgroundImage(img`
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
