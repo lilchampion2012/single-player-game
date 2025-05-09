@@ -538,7 +538,8 @@ function Call_level () {
 let Leve1_Number = 0
 let mySprite: Sprite = null
 let Ask_name = game.askForString(game.ask("What's You name"))
-game.showLongText("Hello, for this game you will need to collect the hidden objects within the different levels or stages. As you work you way through the game you will notice you sprite changing as it works it goes through it's life journey", DialogLayout.Center)
+game.splash("Hi", Ask_name)
+game.showLongText(" For this game you will need to collect the hidden objects within the different levels or stages. As you work you way through the game you will notice you sprite changing as it works it goes through it's life journey", DialogLayout.Center)
 scene.setBackgroundImage(img`
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
