@@ -1,8 +1,12 @@
 {
-    "name": "Single player game",
+    "name": "Single player game - Copy",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "corgio": "*",
+        "feather": "*",
+        "multiplayer": "*",
+        "Timers": "github:microsoft/arcade-timers#v1.1.0"
     },
     "files": [
         "main.blocks",

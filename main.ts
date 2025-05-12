@@ -690,3 +690,8 @@ game.onUpdate(function () {
         game.gameOver(false)
     }
 })
+forever(function () {
+    timer.after(60000, function () {
+        game.gameOver(false)
+    })
+})
