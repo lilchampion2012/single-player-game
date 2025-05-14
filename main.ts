@@ -683,15 +683,11 @@ mySprite = sprites.create(img`
 controller.moveSprite(mySprite, 100, 0)
 mySprite.ay = 350
 scene.cameraFollowSprite(mySprite)
+info.startCountdown(60)
 Leve1_Number = 1
 Call_level()
 game.onUpdate(function () {
     if (mySprite.y >= 248) {
         game.gameOver(false)
     }
-})
-forever(function () {
-    timer.after(60000, function () {
-        game.gameOver(false)
-    })
 })
