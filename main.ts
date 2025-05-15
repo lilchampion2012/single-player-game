@@ -269,6 +269,7 @@ function Call_Leve1 () {
             111111111111111111111111111111111111fffffffffffffffffffffffffffffffffffffff111111111111111111111111111111111111111111111111111111111111111111111111111111111ffff
             `)
         tiles.setCurrentTilemap(tilemap`level7`)
+        game.setGameOverScoringType(game.ScoringType.HighScore)
     }
 }
 function Call_level () {
@@ -535,10 +536,16 @@ function Call_level () {
         tiles.placeOnRandomTile(mySprite, assets.tile`myTile`)
     }
 }
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile26`, function (sprite, location) {
+    if (mySprite.tileKindAt(TileDirection.Bottom, assets.tile`myTile26`)) {
+    	
+    }
+})
 let Planes: Sprite = null
 let Coins: Sprite = null
 let Leve1_Number = 0
 let mySprite: Sprite = null
+info.setScore(0)
 let Ask_name = game.askForString(game.ask("What's You name"))
 game.splash("Hi", Ask_name)
 game.showLongText(" For this game you will need to collect the hidden objects within the different levels or stages. As you work you way through the game you will notice you sprite changing as it works it goes through it's life journey", DialogLayout.Center)
@@ -712,6 +719,7 @@ game.onUpdateInterval(1050, function () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, 50, randint(-50, 50))
+    info.changeScoreBy(1)
     Planes = sprites.createProjectileFromSide(img`
         ....ffffff.........ccc..
         ....ff22ccf.......cc4f..
