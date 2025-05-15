@@ -680,12 +680,6 @@ mySprite = sprites.create(img`
     ................................
     ................................
     `, SpriteKind.Player)
-controller.moveSprite(mySprite, 100, 0)
-mySprite.ay = 350
-scene.cameraFollowSprite(mySprite)
-info.startCountdown(60)
-Leve1_Number = 1
-Call_level()
 game.onUpdate(function () {
     if (mySprite.y >= 248) {
         game.gameOver(false)
