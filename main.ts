@@ -535,6 +535,8 @@ function Call_level () {
         tiles.placeOnRandomTile(mySprite, assets.tile`myTile`)
     }
 }
+let Planes: Sprite = null
+let Coins: Sprite = null
 let Leve1_Number = 0
 let mySprite: Sprite = null
 let Ask_name = game.askForString(game.ask("What's You name"))
@@ -690,4 +692,43 @@ game.onUpdate(function () {
     if (mySprite.y >= 248) {
         game.gameOver(false)
     }
+})
+game.onUpdateInterval(1050, function () {
+    Coins = sprites.createProjectileFromSide(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . 5 5 5 5 5 5 5 5 . . . . . . . 
+        . 5 5 5 5 5 5 5 5 . . . . . . . 
+        . 5 5 5 5 5 5 5 5 . . . . . . . 
+        . 5 5 5 5 5 5 5 5 . . . . . . . 
+        . 5 5 5 5 5 5 5 5 . . . . . . . 
+        . 5 5 5 5 5 5 5 5 . . . . . . . 
+        . 5 5 5 5 5 5 5 5 . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, 50, randint(-50, 50))
+    Planes = sprites.createProjectileFromSide(img`
+        ....ffffff.........ccc..
+        ....ff22ccf.......cc4f..
+        .....ffccccfff...cc44f..
+        ....cc24442222cccc442f..
+        ...c9b4422222222cc422f..
+        ..c9999b222222222222fc..
+        .c2b991119222222222c22c.
+        c2222b11992222ccccccc22f
+        f222222222222c222ccfffff
+        .f2222222222444222f.....
+        ..ff2222222cf444222f....
+        ....ffffffffff444222c...
+        .........f2cfffc2222c...
+        .........fcc2ffffffff...
+        ..........fc2ffff.......
+        ...........fffff........
+        `, randint(-50, 50), randint(-50, 50))
+    Planes.setKind(SpriteKind.Enemy)
 })
