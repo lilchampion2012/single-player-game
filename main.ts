@@ -3,10 +3,9 @@ function Call_Leve2 () {
     if (Leve2_Number == 1) {
         tiles.setCurrentTilemap(tilemap`level13`)
         tiles.placeOnRandomTile(mySprite, assets.tile`myTile20`)
+    } else if (Leve2_Number == 2) {
         tiles.setCurrentTilemap(tilemap`level19`)
         tiles.placeOnRandomTile(mySprite, assets.tile`myTile20`)
-    } else if (Leve2_Number == 2) {
-    	
     } else if (Leve2_Number == 3) {
         tiles.setCurrentTilemap(tilemap`level20`)
         tiles.placeOnRandomTile(mySprite, assets.tile`myTile20`)
@@ -289,7 +288,8 @@ function Call_Leve1 () {
             111111111111111111111111111111111111ffffffffffffffffffffffffffffffffffffff111111111111111111111111111111111111111111111111111111111111111111111111111111111111ff
             111111111111111111111111111111111111fffffffffffffffffffffffffffffffffffffff111111111111111111111111111111111111111111111111111111111111111111111111111111111ffff
             `)
-        tiles.setCurrentTilemap(tilemap`level7`)
+        tiles.setCurrentTilemap(tilemap`level22`)
+        game.showLongText("Congradulations on making it to level 2, your sprite has reached the age of 20.", DialogLayout.Center)
         scene.setBackgroundImage(img`
             9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
             9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -412,6 +412,28 @@ function Call_Leve1 () {
             8888888888777777777788888888888888888888888888888888888888777777777777788888888888888888888888888888888888888888888888888888886666666888888888888888888888888888
             8888888887777777777788888888888888888888888888888888888888877777777778888888888888888888888888888888888888888888888888888888886666666888888888888888888888888888
             `)
+        mySprite = sprites.create(img`
+            . . . . . . f f f f . . . . . . 
+            . . . . f f f 2 2 f f f . . . . 
+            . . . f f f 2 2 2 2 f f f . . . 
+            . . f f f e e e e e e f f f . . 
+            . . f f e 2 2 2 2 2 2 e e f . . 
+            . . f e 2 f f f f f f 2 e f . . 
+            . . f f f f e e e e f f f f . . 
+            . f f e f b f 4 4 f b f e f f . 
+            . f e e 4 1 f d d f 1 4 e e f . 
+            . . f f f f d d d d d e e f . . 
+            . f d d d d f 4 4 4 e e f . . . 
+            . f b b b b f 2 2 2 2 f 4 e . . 
+            . f b b b b f 2 2 2 2 f d 4 . . 
+            . . f c c f 4 5 5 4 4 f 4 4 . . 
+            . . . f f f f f f f f . . . . . 
+            . . . . . f f . . f f . . . . . 
+            `, SpriteKind.Player)
+        controller.moveSprite(mySprite, 100, 0)
+        mySprite.ay = 350
+        scene.cameraFollowSprite(mySprite)
+        Leve1_Number = 1
         Call_Leve2()
     }
 }
