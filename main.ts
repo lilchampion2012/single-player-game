@@ -1,18 +1,12 @@
 function Call_Leve2 () {
     let Leve2_Number = 0
     if (Leve2_Number == 1) {
-        tiles.setCurrentTilemap(tilemap`level13`)
+        tiles.setCurrentTilemap(tilemap`level20`)
         tiles.placeOnRandomTile(mySprite, assets.tile`myTile20`)
     } else if (Leve2_Number == 2) {
-        tiles.setCurrentTilemap(tilemap`level19`)
+        tiles.setCurrentTilemap(tilemap`level20`)
         tiles.placeOnRandomTile(mySprite, assets.tile`myTile20`)
     } else if (Leve2_Number == 3) {
-        tiles.setCurrentTilemap(tilemap`level20`)
-        tiles.placeOnRandomTile(mySprite, assets.tile`myTile20`)
-    } else if (Leve2_Number == 4) {
-        tiles.setCurrentTilemap(tilemap`level20`)
-        tiles.placeOnRandomTile(mySprite, assets.tile`myTile20`)
-    } else {
         tiles.setCurrentTilemap(tilemap`level20`)
         tiles.placeOnRandomTile(mySprite, assets.tile`myTile20`)
         game.setGameOverScoringType(game.ScoringType.HighScore)
@@ -165,7 +159,7 @@ function Call_Leve1 () {
         controller.moveSprite(mySprite, 100, 0)
         scene.cameraFollowSprite(mySprite)
         tiles.placeOnRandomTile(mySprite, assets.tile`myTile`)
-    } else {
+    } else if (Leve1_Number == 5) {
         scene.setBackgroundImage(img`
             8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
             8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
@@ -412,6 +406,8 @@ function Call_Leve1 () {
             8888888888777777777788888888888888888888888888888888888888777777777777788888888888888888888888888888888888888888888888888888886666666888888888888888888888888888
             8888888887777777777788888888888888888888888888888888888888877777777778888888888888888888888888888888888888888888888888888888886666666888888888888888888888888888
             `)
+        tiles.setCurrentTilemap(tilemap`level13`)
+        tiles.placeOnRandomTile(mySprite, assets.tile`myTile20`)
         mySprite = sprites.create(img`
             . . . . . . f f f f . . . . . . 
             . . . . f f f 2 2 f f f . . . . 
@@ -433,7 +429,10 @@ function Call_Leve1 () {
         controller.moveSprite(mySprite, 100, 0)
         mySprite.ay = 350
         scene.cameraFollowSprite(mySprite)
-        Leve1_Number = 1
+    } else {
+        tiles.setCurrentTilemap(tilemap`level19`)
+        tiles.placeOnRandomTile(mySprite, assets.tile`myTile20`)
+        Leve1_Number = 2
         Call_Leve2()
     }
 }
